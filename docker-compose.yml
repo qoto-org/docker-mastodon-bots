@@ -4,4 +4,5 @@ services:
     image: 'qotoorg/mastodon-bots:1'
     build: .
     volumes:
-      - './cronjobs:/etc/crontabs/root'
+      - './cronjobs:/etc/cron.d/default'
+      - './bots:/bots'

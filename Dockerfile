@@ -1,4 +1,8 @@
-FROM alpine:3.6
 
-# start crond with log level 8 in foreground, output to stderr
-CMD ["crond", "-f", "-d", "8"]
+FROM ubuntu:latest
+MAINTAINER jeffrey.freeman@qoto.org
+
+RUN apt-get update && apt-get -y install cron npm
+
+# Run the command on container startup
+CMD crontab /etc/cron.d/* && cron -f
