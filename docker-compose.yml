@@ -1,7 +1,7 @@
 version: '2'
 services:
   mastodon-bots:
-    image: 'qotoorg/mastodon-bots:3'
+    image: 'qotoorg/mastodon-bots:4'
     build: .
     volumes:
       - './cronjobs:/etc/cron.d/default'
